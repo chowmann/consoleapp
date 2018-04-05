@@ -1,5 +1,7 @@
 package net.chowdharys.consoleapp;
 
+import net.chowdharys.consoleapp.mongo.MongoDbPersonTest;
+import net.chowdharys.consoleapp.mongo.MongoDbTest;
 import net.chowdharys.consoleapp.service.HelloMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
@@ -33,6 +35,11 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
         }else{
             System.out.println(helloService.getMessage());
         }
+
+        MongoDbTest dbTest = new MongoDbTest();
+        dbTest.test();
+        MongoDbPersonTest dbpersonTest = new MongoDbPersonTest();
+        dbpersonTest.personTest();
 
         exit(0);
     }
